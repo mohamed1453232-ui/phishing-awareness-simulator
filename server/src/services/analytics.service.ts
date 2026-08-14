@@ -1,5 +1,15 @@
 const API_URL = "http://localhost:3000/api";
 
+import {
+  AnalyticsEvent,
+  AnalyticsEventType,
+} from "../models/analytics.model";
+
+export const createAnalyticsEvent = async (
+  type: AnalyticsEventType,
+): Promise<void> => {
+  await AnalyticsEvent.create({ type });
+};
 export const trackVisit = async (): Promise<void> => {
   const response = await fetch(`${API_URL}/analytics/visit`, {
     method: "POST",
