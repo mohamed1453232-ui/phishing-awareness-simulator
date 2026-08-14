@@ -9,7 +9,7 @@ interface StatsResponse {
 }
 
 // const API_URL = "http://localhost:3000/api";
-const API_URL = "back-production-e7eb.up.railway.app/api";
+const API_URL = "https://back-production-e7eb.up.railway.app/api";
 
 
 export const getAnalyticsStats = async (): Promise<AnalyticsStats> => {

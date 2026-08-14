@@ -1,4 +1,5 @@
-const API_URL = "http://localhost:3000/api";
+// const API_URL = "http://localhost:3000/api";
+const API_URL = "https://back-production-e7eb.up.railway.app/api";
 
 import {
   AnalyticsEvent,
