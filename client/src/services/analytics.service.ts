@@ -1,4 +1,5 @@
-const API_URL = "http://localhost:3000/api";
+// const API_URL = "http://localhost:3000/api";
+const API_URL = "back-production-e7eb.up.railway.app/api";
 
 export const trackVisit = async (): Promise<void> => {
   const response = await fetch(`${API_URL}/analytics/visit`, {
