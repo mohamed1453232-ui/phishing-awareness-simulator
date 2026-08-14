@@ -36,7 +36,7 @@ function AdminLoginPage() {
     setIsLoading(true);
 
     try {
-      const response = await fetch(`${API_URL}/admin/login`, {
+      const response = await fetch(`${API_URL}/admin`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
