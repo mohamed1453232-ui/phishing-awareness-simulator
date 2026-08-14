@@ -10,10 +10,12 @@ import { requireAdmin } from "./middleware/adminAuth";
 const app = express();
 app.use(cookieParser());
 const PORT = process.env.PORT || 3000;
-
 app.use(
   cors({
-    origin: ["https://phishing-awareness-simulator.vercel.app", "https://phishing-awareness-simulator.vercel.app/admin","http://localhost:573"],
+    origin: [
+      "https://phishing-awareness-simulator.vercel.app",
+      "http://localhost:5173",
+    ],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
