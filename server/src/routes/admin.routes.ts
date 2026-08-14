@@ -26,10 +26,7 @@ router.post("/", async (req, res) => {
       });
     }
 
-    const passwordMatch = await bcrypt.compare(
-      password,
-      admin.password
-    );
+    const passwordMatch = await bcrypt.compare(password, admin.password);
 
     if (!passwordMatch) {
       return res.status(401).json({
@@ -52,13 +49,19 @@ router.post("/", async (req, res) => {
       secret,
       {
         expiresIn: "1h",
-      }
+      },
     );
 
+    // res.cookie("admin_token", token, {
+    //   httpOnly: true,
+    //   sameSite: "lax",
+    //   secure: process.env.NODE_ENV === "production",
+    //   maxAge: 60 * 60 * 1000,
+    // });
     res.cookie("admin_token", token, {
       httpOnly: true,
-      sameSite: "lax",
-      secure: process.env.NODE_ENV === "production",
+      sameSite: "none",
+      secure: true,
       maxAge: 60 * 60 * 1000,
     });
 
