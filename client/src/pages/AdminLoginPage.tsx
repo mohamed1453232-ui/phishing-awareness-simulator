@@ -15,7 +15,7 @@ import { Label } from "../components/ui/label";
 import { Button } from "../components/ui/button";
 
 // const API_URL = "http://localhost:3000/api";
-const API_URL = "back-production-e7eb.up.railway.app/api";
+const API_URL = "https://back-production-e7eb.up.railway.app/api";
 
 function AdminLoginPage() {
   const navigate = useNavigate();
