@@ -33,6 +33,7 @@ function AdminLoginPage() {
     event.preventDefault();
 
     setError("");
+    setIsLoading(true);
 
     try {
       const response = await fetch(`${API_URL}/admin/login`, {
@@ -46,7 +47,7 @@ function AdminLoginPage() {
           password,
         }),
       });
-      setIsLoading(true);
+
       const data = await response.json();
 
       if (!response.ok) {
@@ -147,7 +148,7 @@ function AdminLoginPage() {
             </div>
 
             {/* Submit */}
-            <Button type="submit" className="w-full" disabled={isLoading}>
+            <Button type="submit" className="w-full hover:bg-gray-700">
               {isLoading ? (
                 <>
                   <span
